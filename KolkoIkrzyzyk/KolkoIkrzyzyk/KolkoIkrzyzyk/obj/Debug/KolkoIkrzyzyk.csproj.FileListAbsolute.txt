@@ -1,0 +1,10 @@
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\bin\Debug\KolkoIkrzyzyk.exe.config
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.Form1.resources
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.Properties.Resources.resources
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.csproj.GenerateResource.Cache
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\bin\Debug\KolkoIkrzyzyk.exe
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\bin\Debug\KolkoIkrzyzyk.pdb
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.exe
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.pdb
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.Form2.resources
+C:\Users\DOBRI\Desktop\programy csharp\KolkoIkrzyzyk\KolkoIkrzyzyk\KolkoIkrzyzyk\obj\Debug\KolkoIkrzyzyk.csprojResolveAssemblyReference.cache
