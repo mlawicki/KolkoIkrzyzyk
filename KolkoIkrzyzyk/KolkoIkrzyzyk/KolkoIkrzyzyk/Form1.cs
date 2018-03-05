@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KolkoIkrzyzyk
@@ -15,123 +8,131 @@ namespace KolkoIkrzyzyk
 
     public partial class Form1 : Form
     {
-        char a1 = 'z'; //z-nieoznaczony
-        char a2 = 'z';
-        char a3 = 'z';
-        char b1 = 'z';
-        char b2 = 'z';
-        char b3 = 'z';
-        char c1 = 'z';
-        char c2 = 'z';
-        char c3 = 'z';
 
-        char czyjaTura = 'X'; //o-kolko,x-krzyżyk
+        public char czyjaTura = 'X'; //o-kolko,x-krzyżyk
+        int iloscTur;
+        bool wygrana = false;
 
         public Form1()
         {
             InitializeComponent();
-            Form2 frm = new Form2();
-            frm.ShowDialog();
         }
 
  
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             turaLabel.Text = czyjaTura.ToString();
-
+            iloscTurLabel.Text = iloscTur.ToString();
+            poczatek();
         }
-     //   void sprawdzeniePola()
-     //   {
-     //       if (a1=a2&&a2=a3)||(b1=b2=b3)||(c1=c2=c3)||(a1=b1=c1)||(a2=b2=c2)||(a3=b3=c3)||(a1=b2=c3)||(a3=b2=c3)
-     //               {
-     //               }
-     //   }
+        void poczatek()
+        {
+            Form2 frm = new Form2();
+            frm.ShowDialog();
+            czyjaTura = frm.czyjaTura1;
+        }
+        void sprawdzenie()
+        {
+
+
+            if ((A1.Text == A2.Text) && (A2.Text == A3.Text)&&!A1.Enabled&&!A2.Enabled&&!A3.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((B1.Text == B2.Text) && (B2.Text == B3.Text)&&!B1.Enabled&&!B2.Enabled&&!B3.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((C1.Text == C2.Text) && (C2.Text == C3.Text) && !C1.Enabled && !C2.Enabled && !C3.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((A1.Text == B1.Text) && (B1.Text == C1.Text) && !A1.Enabled && !B1.Enabled && !C1.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((A2.Text == B2.Text) && (B2.Text == C2.Text) && !A2.Enabled && !B2.Enabled && !C2.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((A3.Text == B3.Text) && (B3.Text == C3.Text) && !A3.Enabled && !B3.Enabled && !C3.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((A1.Text == B2.Text) && (B2.Text == C3.Text) && !A1.Enabled && !B2.Enabled && !C3.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            if ((A3.Text == B2.Text) && (B2.Text == C1.Text) && !A3.Enabled && !B2.Enabled && !C1.Enabled) { wygrana = true; MessageBox.Show("Wygrał gracz: " + A1.Text); }
+            else { remis(); }
+        }
         void zmianaTury()
         {
+            sprawdzenie();
             if (czyjaTura == 'X')
             { czyjaTura = 'O'; }
             else 
             { czyjaTura = 'X'; }
             turaLabel.Text = czyjaTura.ToString();
+
+            iloscTur += 1;
+            iloscTurLabel.Text = iloscTur.ToString();
+
+
         }
-        void oznaczenie()
+     //   void oznaczenie()
+     //   {
+     //       this.Text = czyjaTura.ToString();
+     //       this.Enabled = false;
+     //       sprawdzenie();
+     //   }
+
+        void remis()
         {
-            Text = czyjaTura.ToString();
-            Enabled = false;
+            if (iloscTur == 9&&!wygrana) { MessageBox.Show("Nikt nie wygrał"); }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Text = czyjaTura.ToString();
-            char a1 = czyjaTura;
+            A1.Text = czyjaTura.ToString();
             zmianaTury();
-            button1.Enabled = false;
+            A1.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.Text = czyjaTura.ToString();
-            char a2 = czyjaTura;
+            A2.Text = czyjaTura.ToString();
             zmianaTury();
-            button2.Enabled = false;
+            A2.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button3.Text = czyjaTura.ToString();
-            char a3 = czyjaTura;
+            A3.Text = czyjaTura.ToString();
             zmianaTury();
-            button3.Enabled = false;
+            A3.Enabled = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            button4.Text = czyjaTura.ToString();
-            char a4 = czyjaTura;
+            B1.Text = czyjaTura.ToString();
             zmianaTury();
-            button4.Enabled = false;
+            B1.Enabled = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            button5.Text = czyjaTura.ToString();
-            char a5 = czyjaTura;
+            B2.Text = czyjaTura.ToString();
             zmianaTury();
-            button5.Enabled = false;
+            B2.Enabled = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            button6.Text = czyjaTura.ToString();
-            char a6 = czyjaTura;
+            B3.Text = czyjaTura.ToString();
             zmianaTury();
-            button6.Enabled = false;
+            B3.Enabled = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            button7.Text = czyjaTura.ToString();
-            char a7 = czyjaTura;
+            C1.Text = czyjaTura.ToString();
             zmianaTury();
-            button7.Enabled = false;
+            C1.Enabled = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            button8.Text = czyjaTura.ToString();
-            char a8 = czyjaTura;
+            C2.Text = czyjaTura.ToString();
             zmianaTury();
-            button8.Enabled = false;
+            C2.Enabled = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            button9.Text = czyjaTura.ToString();
-            char a9 = czyjaTura;
+            C3.Text = czyjaTura.ToString();
             zmianaTury();
-            button9.Enabled = false;
+            C3.Enabled = false;
         }
     }
 }
